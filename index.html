@@ -26,14 +26,14 @@
               font-size: 16px;
               margin: 4px 2px;
               cursor: pointer;
-              float: left;
               position: relative;
-              bottom: 21px;
-              right: 20px;
+              left: -1.5px;
             }
             .textarea {
               position: relative;
-              float: left;
+            }
+            .clearfix {
+              clear:both;
             }
         </style>
         <title>
@@ -44,6 +44,7 @@
     <body>
 
         <textarea class="textarea" id="text" name="text" cols="150" rows="30" draggable="false" style="resize:none"></textarea>
+        <div class="clearfix"></div>
         <input type="button" class="button" value="Aktualisieren" onclick="history.go(0)"/>
         <input type="button" class="button" value="Speichern" onclick="save()"/>
         <input type="button" class="button" value="Herunterladen" onclick="download()"/>
