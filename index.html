@@ -15,6 +15,18 @@
             body {
                 background-image: url("Images/background.png");
             }
+            .button {
+              background-color: #4CAF50;
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
         </style>
 
         <title>
@@ -25,9 +37,9 @@
     <body>
 
         <textarea id="text" name="text" cols="150" rows="30" draggable="false"></textarea>
-        <input type="submit" value="Aktualisieren" onclick="history.go(0)"/>
-        <input type="submit" value="Speichern" onclick="save()"/>
-        <input type="submit" value="Herunterladen" onclick="download()"/>
+        <input type="button" class="button" value="Aktualisieren" onclick="history.go(0)"/>
+        <input type="button" class="button" value="Speichern" onclick="save()"/>
+        <input type="button" class="button" value="Herunterladen" onclick="download()"/>
 
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
