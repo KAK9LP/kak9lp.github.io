@@ -18,11 +18,38 @@
         </style>
 
         <title>
-            KAK9DEV
+            Experimente
         </title>
     </head>
 
     <body>
-        
+
+        <textarea id="text" name="text" cols="500" rows="10"></textarea>
+
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+
+        <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyCiJQURwdH-ok2_6B6tDa8FsRvnIpDakv4",
+          authDomain: "experimente-2ff54.firebaseapp.com",
+          databaseURL: "https://experimente-2ff54-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "experimente-2ff54",
+          storageBucket: "experimente-2ff54.appspot.com",
+          messagingSenderId: "539167433636",
+          appId: "1:539167433636:web:2aaed5dab46f77e92d1731"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+
+        firebase.database().ref(words).set({
+          liste: "test"
+        });
+
+        </script>
+
     </body>
 </html>
