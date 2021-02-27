@@ -25,9 +25,9 @@
     <body>
 
         <textarea id="text" name="text" cols="150" rows="30" draggable="false"></textarea>
-        <input type="submit" value="Aktualisieren" />
-        <input type="submit" value="Speichern" />
-        <input type="submit" value="Herunterladen" />
+        <input type="submit" value="Aktualisieren" onclick="reload()"/>
+        <input type="submit" value="Speichern" onclick="save()"/>
+        <input type="submit" value="Herunterladen" onclick="download()"/>
 
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
@@ -52,6 +52,12 @@
           liste: "test"
         });
 
+        </script>
+
+        <script>
+        function reload() {
+          document.reload;
+        }
         </script>
 
     </body>
