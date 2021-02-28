@@ -43,7 +43,7 @@
 
     <body>
 
-        <textarea class="textarea" id="text" name="text" cols="150" rows="30" draggable="false" style="resize:none"></textarea>
+        <textarea class="textarea" spellcheck="false" id="text" name="text" cols="150" rows="30" draggable="false" style="resize:none"></textarea>
         <div class="clearfix"></div>
         <input type="button" class="button" value="Aktualisieren" onclick="history.go(0)"/>
         <input type="button" class="button" value="Speichern" onclick="save()"/>
@@ -64,7 +64,6 @@
           appId: "1:539167433636:web:2aaed5dab46f77e92d1731"
         };
 
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         var database = firebase.database();
 
