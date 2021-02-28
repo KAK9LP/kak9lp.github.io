@@ -76,6 +76,10 @@
 
         <script>
         function download() {
+          var text=document.getElementById('text').value;
+          var data = new Blob([text], {type: 'text/plain'});
+          var url = window.URL.createObjectURL(data);
+          location.href = url;
 
         }
         window.onload = function() {
