@@ -51,7 +51,7 @@
 
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
 
         <script>
         var firebaseConfig = {
@@ -68,24 +68,33 @@
         firebase.initializeApp(firebaseConfig);
         var database = firebase.database();
 
-        firebase.database().ref(words).set({
-          liste: "test"
-        });
-
         </script>
 
         <script>
         function download() {
+          var a = document.createElement("a");
+          document.body.appendChild(a);
+          a.style = "display: none";
           var text=document.getElementById('text').value;
           var data = new Blob([text], {type: 'text/plain'});
           var url = window.URL.createObjectURL(data);
-          location.href = url;
-
+          a.href = url;
+          a.download = "liste.txt";
+          a.click();
+          window.URL.revokeObjectURL(url);
         }
         window.onload = function() {
-
-
-
+          firebase.database().ref("words").child("liste").on("value", function(snapshot) {
+            document.getElementById('text').value = snapshot.val();
+          }, function (error) {
+            console.log("Error: " + error.code);
+          });
+        }
+        function save() {
+          firebase.database().ref("words").set({
+            liste: document.getElementById('text').value
+          });
+          return alert('Gespeichert!');
         }
         </script>
 
